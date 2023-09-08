@@ -368,7 +368,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             kCGImageSourceCreateThumbnailFromImageAlways: true,
             kCGImageSourceShouldCacheImmediately: true,
             kCGImageSourceCreateThumbnailWithTransform: true,
-            kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels] as [CFString : Any] as CFDictionary
+            kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels] as CFDictionary
         guard let downsampledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions) else {
             return nil
         }
