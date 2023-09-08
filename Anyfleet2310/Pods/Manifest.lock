@@ -1,0 +1,90 @@
+PODS:
+  - Alamofire (5.4.3)
+  - CocoaMQTT (2.1.3):
+    - CocoaMQTT/Core (= 2.1.3)
+  - CocoaMQTT/Core (2.1.3):
+    - MqttCocoaAsyncSocket (~> 1.0.8)
+  - EmptyDataSet-Swift (5.0.0)
+  - Google-Maps-iOS-Utils (4.1.0):
+    - Google-Maps-iOS-Utils/Clustering (= 4.1.0)
+    - Google-Maps-iOS-Utils/Geometry (= 4.1.0)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 4.1.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 4.1.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 4.1.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/GeometryUtils (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (4.1.0):
+    - GoogleMaps
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
+  - HandyJSON (5.0.2)
+  - IQKeyboardManagerSwift (6.5.6)
+  - JGProgressHUD (2.2)
+  - KeychainAccess (4.2.2)
+  - Kingfisher (6.3.0)
+  - MJRefresh (3.7.5)
+  - MqttCocoaAsyncSocket (1.0.8)
+  - ZLPhotoBrowser (4.3.9):
+    - ZLPhotoBrowser/Core (= 4.3.9)
+  - ZLPhotoBrowser/Core (4.3.9)
+
+DEPENDENCIES:
+  - Alamofire (= 5.4.3)
+  - CocoaMQTT (= 2.1.3)
+  - EmptyDataSet-Swift (= 5.0.0)
+  - Google-Maps-iOS-Utils (= 4.1.0)
+  - GoogleMaps (= 7.4.0)
+  - HandyJSON (= 5.0.2)
+  - IQKeyboardManagerSwift (= 6.5.6)
+  - JGProgressHUD (= 2.2)
+  - KeychainAccess (= 4.2.2)
+  - Kingfisher (= 6.3.0)
+  - MJRefresh (= 3.7.5)
+  - ZLPhotoBrowser (= 4.3.9)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - CocoaMQTT
+    - EmptyDataSet-Swift
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
+    - HandyJSON
+    - IQKeyboardManagerSwift
+    - JGProgressHUD
+    - KeychainAccess
+    - Kingfisher
+    - MJRefresh
+    - MqttCocoaAsyncSocket
+    - ZLPhotoBrowser
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  CocoaMQTT: f91421327f100d64374792b96bc9787e983bfe29
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
+  Google-Maps-iOS-Utils: 3343332b18dfd5be8f1f44edd7d481ace3da4d9a
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
+  ZLPhotoBrowser: 02b3569b8f702d2e153e8fdb1f6b32fef3a2867c
+
+PODFILE CHECKSUM: 2f4128ef3d7b7689b34f9e7351c5caf6f2728606
+
+COCOAPODS: 1.11.3

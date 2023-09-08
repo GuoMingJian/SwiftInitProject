@@ -1,0 +1,9 @@
+// 键盘
+"toolbar_done" = "done";
+"no_data" = "N/A";
+"api_loading" = "Loading...";
+//===========================================================
+// tabbar
+"tabbar_01" = "Vehicle";
+"tabbar_02" = "Notification";
+"tabbar_03" = "Mine";
