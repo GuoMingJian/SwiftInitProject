@@ -8,6 +8,15 @@
 import UIKit
 
 class ManageStorageViewController: BaseViewController {
+    struct StorageData {
+        var name: String = ""
+        var color: UIColor = .orange
+        var used: Double = 1.0
+        var unit: String = "GB"
+        //
+        var total: Double = 10
+    }
+    
     struct Configuration {
         
     }
@@ -25,13 +34,36 @@ class ManageStorageViewController: BaseViewController {
         return view
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: CGRectZero, style: .grouped)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .white
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.bounces = true
+        tableView.separatorStyle = .none
+        //
+        tableView.setCornerRadius(radius: 10)
+        tableView.backgroundColor = UIColor.hexColor(color: "F4F7FA")
+        //
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MFStorageCell.classForCoder(), forCellReuseIdentifier: MFStorageCell.description())
+        tableView.register(MFStorageFooterView.classForCoder(), forHeaderFooterViewReuseIdentifier: MFStorageFooterView.description())
+        return tableView
+    }()
+    
     // MARK: -
+    private var dataSource: [StorageData] = []
+    private var footerHeight: CGFloat = 10
+    
     override func setupViews() {
         super.setupViews()
         view.backgroundColor = UIColor.hexColor(color: "F4F7FA")
         
         view.addSubview(pieChartView)
         view.addSubview(storageBuyNowView)
+        view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
             pieChartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
@@ -42,6 +74,11 @@ class ManageStorageViewController: BaseViewController {
             storageBuyNowView.topAnchor.constraint(equalTo: pieChartView.bottomAnchor, constant: 15),
             storageBuyNowView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             storageBuyNowView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            tableView.topAnchor.constraint(equalTo: storageBuyNowView.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: storageBuyNowView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: storageBuyNowView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
@@ -57,6 +94,43 @@ class ManageStorageViewController: BaseViewController {
     
     // MARK: -
     private func setupData() {
+        var nameList: [String] = ["Photo",
+                                  "Social Apps",
+                                  "Record Surround",
+                                  "Videos Preview",
+                                  "Record Calls",
+                                  "Capture Screenshots",
+                                  "Take Photos"]
+        nameList.append("Remaining")
+        
+        let Remaining: Double = 3.5
+        
+        for (index, _) in nameList.enumerated() {
+            var storageData: StorageData = StorageData()
+            storageData.color = UIColor.randomColor()
+            storageData.name = nameList[index]
+            if index != nameList.count - 1 {
+                storageData.used = Double(arc4random() % 50) / 10
+            } else {
+                storageData.used = Remaining
+            }
+            //
+            dataSource.append(storageData)
+        }
+        
+        var sum: Double = 0
+        for (_, item) in dataSource.enumerated() {
+            sum += item.used
+        }
+        
+        for (index, item) in dataSource.enumerated() {
+            var newItem = item
+            newItem.total = sum
+            //
+            dataSource.remove(at: index)
+            dataSource.insert(newItem, at: index)
+        }
+        
         setupPieChartViewData()
         setupBuyNowViewData()
     }
@@ -65,17 +139,31 @@ class ManageStorageViewController: BaseViewController {
         var config = MJPieChartView.Configuration()
         
         var dataList: [MJPieChartView.MJPieChartData] = []
-        for _ in 0...9 {
+        
+        for (_, item) in dataSource.enumerated() {
             var pieData: MJPieChartView.MJPieChartData = MJPieChartView.MJPieChartData()
-            pieData.value = Double(arc4random() % 100)
-            pieData.color = UIColor.randomColor()
+            pieData.value = item.used
+            pieData.color = item.color
             dataList.append(pieData)
         }
         
-        config.dataList = dataList
-        config.subTitle = "Total Used:"
-        config.title = "3.99GB,\n88% with 4GB"
-        pieChartView.setupViews(configuration: config)
+        if dataSource.count > 0 {
+            let sum = dataSource.first!.total
+            let sumStr = String(format: "%.2f", sum)
+            
+            let remaining: Double = dataSource.last!.used
+            
+            let used = sum - remaining
+            let usedStr = String(format: "%.2f", used)
+            
+            let percent: Double = used / sum
+            let percentInt: Int = Int(percent * 100)
+            
+            config.dataList = dataList
+            config.subTitle = "Total Used:"
+            config.title = "\(usedStr)GB,\n\(percentInt)% with \(sumStr)GB"
+            pieChartView.setupViews(configuration: config)
+        }
     }
     
     private func setupBuyNowViewData() {
@@ -85,4 +173,51 @@ class ManageStorageViewController: BaseViewController {
             MJTipView.show("Boy Now!")
         }
     }
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension ManageStorageViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: MFStorageCell = tableView.dequeueReusableCell(withIdentifier: MFStorageCell.description(), for: indexPath) as! MFStorageCell
+        cell.selectionStyle = .none
+        //
+        cell.bottomLineView.isHidden = true
+        cell.showRightArrowImageView()
+        //
+        let data = dataSource[indexPath.row]
+        let usedStr = String(format: "%.2f", data.used) + data.unit
+        cell.updateInfo(color: data.color, name: data.name, value: usedStr)
+        
+        return cell
+    }
+    
+    // MARK: -
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView: MFStorageFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: MFStorageFooterView.description()) as! MFStorageFooterView
+        footerView.contentView.backgroundColor = .clear
+        let text: String = """
+Tips:
+1.When the data storage of the function is full, its more previous data will be deleted.
+2.The type of Extra Storage is determined by the type of Benefit: 1- Month Plan
+3.When you purchase the Extra Storage service for one device, all devices under the VIP Benefit to which the device belongs will be equally entitled to the Extra Storage service.
+"""
+        footerView.updateInfo(text: text)
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    //    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    //        return 0.01
+    //    }
 }

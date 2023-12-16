@@ -31,6 +31,9 @@
 		D5815D0C2B2D729E00A01B7A /* MFStorageBuyNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D0B2B2D729E00A01B7A /* MFStorageBuyNowView.swift */; };
 		D5815D0E2B2D79EA00A01B7A /* MJButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D0D2B2D79EA00A01B7A /* MJButton.swift */; };
 		D5815D102B2D833900A01B7A /* MJTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D0F2B2D833900A01B7A /* MJTipView.swift */; };
+		D5D93D202B2D96820066F77D /* MFStorageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */; };
+		D5D93D222B2D96A70066F77D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */; };
+		D5D93D242B2DA0C00066F77D /* MFStorageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		D5815D0B2B2D729E00A01B7A /* MFStorageBuyNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageBuyNowView.swift; sourceTree = "<group>"; };
 		D5815D0D2B2D79EA00A01B7A /* MJButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJButton.swift; sourceTree = "<group>"; };
 		D5815D0F2B2D833900A01B7A /* MJTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJTipView.swift; sourceTree = "<group>"; };
+		D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageCell.swift; sourceTree = "<group>"; };
+		D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 				D5815CE02B2D449600A01B7A /* BaseNavigationController.swift */,
 				D5815CE12B2D449600A01B7A /* BaseTabBarViewController.swift */,
 				D5815D072B2D51D900A01B7A /* MFBaseView.swift */,
+				D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */,
 			);
 			path = BaseFiles;
 			sourceTree = "<group>";
@@ -246,9 +253,19 @@
 				D5815D002B2D51B200A01B7A /* MFStorageView.swift */,
 				D5815D032B2D51BA00A01B7A /* MJPieChartView.swift */,
 				D5815D0B2B2D729E00A01B7A /* MFStorageBuyNowView.swift */,
+				D5D93D1E2B2D96530066F77D /* Cell */,
 				D5815D092B2D591900A01B7A /* ManageStorageViewController.swift */,
 			);
 			path = "Manage Storage";
+			sourceTree = "<group>";
+		};
+		D5D93D1E2B2D96530066F77D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */,
+				D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +389,9 @@
 				D5815CF52B2D470C00A01B7A /* NotificationViewController.swift in Sources */,
 				D5815D102B2D833900A01B7A /* MJTipView.swift in Sources */,
 				D5815D012B2D51B200A01B7A /* MFStorageView.swift in Sources */,
+				D5D93D222B2D96A70066F77D /* BaseTableViewCell.swift in Sources */,
 				D5815D052B2D51BA00A01B7A /* MJPieChartView.swift in Sources */,
+				D5D93D242B2DA0C00066F77D /* MFStorageFooterView.swift in Sources */,
 				D5815D082B2D51D900A01B7A /* MFBaseView.swift in Sources */,
 				D5815CF72B2D472500A01B7A /* MineViewController.swift in Sources */,
 				D5815CEE2B2D456A00A01B7A /* MJTools.swift in Sources */,
@@ -382,6 +401,7 @@
 				D5815D0A2B2D591900A01B7A /* ManageStorageViewController.swift in Sources */,
 				D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */,
 				D5815CE22B2D449600A01B7A /* BaseNavigationController.swift in Sources */,
+				D5D93D202B2D96820066F77D /* MFStorageCell.swift in Sources */,
 				D5815CE62B2D44F100A01B7A /* MJLanguageManager.swift in Sources */,
 				D5815D0E2B2D79EA00A01B7A /* MJButton.swift in Sources */,
 				D5815CEC2B2D454F00A01B7A /* BaseViewController.swift in Sources */,
