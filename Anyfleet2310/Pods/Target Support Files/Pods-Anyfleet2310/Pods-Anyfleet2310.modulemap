@@ -1,6 +1,0 @@
-framework module Pods_Anyfleet2310 {
-  umbrella header "Pods-Anyfleet2310-umbrella.h"
-
-  export *
-  module * { export * }
-}

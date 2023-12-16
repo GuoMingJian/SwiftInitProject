@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.4.3)
+  - EmptyDataSet-Swift (5.0.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - JGProgressHUD (2.2)
+  - Kingfisher (6.3.0)
+  - MJRefresh (3.7.5)
+
+DEPENDENCIES:
+  - Alamofire (= 5.4.3)
+  - EmptyDataSet-Swift (= 5.0.0)
+  - IQKeyboardManagerSwift (= 6.5.6)
+  - JGProgressHUD (= 2.2)
+  - Kingfisher (= 6.3.0)
+  - MJRefresh (= 3.7.5)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - EmptyDataSet-Swift
+    - IQKeyboardManagerSwift
+    - JGProgressHUD
+    - Kingfisher
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+
+PODFILE CHECKSUM: 8d3b9e0d65c8f84442e66fa5434ef717d9db5351
+
+COCOAPODS: 1.12.0
