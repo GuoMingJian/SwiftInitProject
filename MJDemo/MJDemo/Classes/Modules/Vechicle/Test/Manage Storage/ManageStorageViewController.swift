@@ -55,7 +55,7 @@ class ManageStorageViewController: BaseViewController {
     
     // MARK: -
     private var dataSource: [StorageData] = []
-    private var footerHeight: CGFloat = 10
+    private var lastCell: MFStorageCell?
     
     override func setupViews() {
         super.setupViews()
@@ -92,6 +92,13 @@ class ManageStorageViewController: BaseViewController {
         title = "Manage Storage"
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if lastCell != nil {
+            lastCell!.setCornerRadius(conrners: [.bottomLeft, .bottomRight], radius: 10)
+        }
+    }
+    
     // MARK: -
     private func setupData() {
         var nameList: [String] = ["Photo",
@@ -103,14 +110,14 @@ class ManageStorageViewController: BaseViewController {
                                   "Take Photos"]
         nameList.append("Remaining")
         
-        let Remaining: Double = 3.5
+        let Remaining: Double = 0.65
         
         for (index, _) in nameList.enumerated() {
             var storageData: StorageData = StorageData()
             storageData.color = UIColor.randomColor()
             storageData.name = nameList[index]
             if index != nameList.count - 1 {
-                storageData.used = Double(arc4random() % 50) / 10
+                storageData.used = Double(arc4random() % 20) / 10.0
             } else {
                 storageData.used = Remaining
             }
@@ -192,7 +199,16 @@ extension ManageStorageViewController: UITableViewDelegate, UITableViewDataSourc
         let usedStr = String(format: "%.2f", data.used) + data.unit
         cell.updateInfo(color: data.color, name: data.name, value: usedStr)
         
+        if indexPath.row == dataSource.count - 1 {
+            self.lastCell = cell
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        MJTipView.show("Click: \(index)")
     }
     
     // MARK: -
