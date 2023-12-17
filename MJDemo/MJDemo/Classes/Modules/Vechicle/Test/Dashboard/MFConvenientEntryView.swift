@@ -185,9 +185,25 @@ class MFConvenientEntryView: BaseView {
         recSurroundImageView.image = kErrorImage
         takePhotosImageView.image = kErrorImage
         
-        liveScreenButton.setBorderStyle(borderWidth: 1, borderColor: .orange)
-        recSurroundButton.setBorderStyle(borderWidth: 1, borderColor: .orange)
-        takePhotosButton.setBorderStyle(borderWidth: 1, borderColor: .orange)
+        addLine()
+    }
+    
+    private func addLine() {
+        let font1 = UIFont.PFMedium(fontSize: 15)
+        let font2 = UIFont.PFRegular(fontSize: 14)
+        let deletePrice = "$85.99"
+        let previousPrice = "$59.99/\(deletePrice)"
+        
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: previousPrice, attributes: [NSAttributedString.Key.font: font1])
+        
+        let rang = previousPrice.range(of: deletePrice)
+        
+        attributeString.addAttributes([NSAttributedString.Key.baselineOffset : 0,
+                                       NSAttributedString.Key.strikethroughStyle : 1.5,
+                                       NSAttributedString.Key.foregroundColor : UIColor.lightGray,
+                                       NSAttributedString.Key.font : font2], range: rang)
+        //
+        liveScreenLabel.attributedText = attributeString
     }
     
     // MARK: - actions

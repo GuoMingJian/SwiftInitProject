@@ -56,7 +56,7 @@ public func localizedString(_ key: String,
 }
 
 // MARK: - LanguageManager
-public let kLanguageKey = "AnyTrekLanguageKey"
+public let kLanguageKey = "kCurrentLanguageKey"
 
 class MJLanguageManager: NSObject {
     static let shared = MJLanguageManager()

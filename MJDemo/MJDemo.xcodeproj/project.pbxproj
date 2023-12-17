@@ -13,6 +13,8 @@
 		D503FBFD2B2EC8E2008AFE24 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */; };
 		D503FBFF2B2EC8F4008AFE24 /* AppsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */; };
 		D503FC022B2EE62D008AFE24 /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FC012B2EE62D008AFE24 /* LPViewController.swift */; };
+		D503FC052B2F0885008AFE24 /* MFGetBenefitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FC042B2F0885008AFE24 /* MFGetBenefitsVC.swift */; };
+		D503FC072B2F0AA9008AFE24 /* MFOriginalPriceBenefitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FC062B2F0AA9008AFE24 /* MFOriginalPriceBenefitsView.swift */; };
 		D5815CC22B2D42B300A01B7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC12B2D42B300A01B7A /* AppDelegate.swift */; };
 		D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */; };
 		D5815CCB2B2D42B400A01B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5815CCA2B2D42B400A01B7A /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsView.xib; sourceTree = "<group>"; };
 		D503FC012B2EE62D008AFE24 /* LPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
+		D503FC042B2F0885008AFE24 /* MFGetBenefitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFGetBenefitsVC.swift; sourceTree = "<group>"; };
+		D503FC062B2F0AA9008AFE24 /* MFOriginalPriceBenefitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFOriginalPriceBenefitsView.swift; sourceTree = "<group>"; };
 		D5815CBE2B2D42B300A01B7A /* MJDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5815CC12B2D42B300A01B7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,15 @@
 				D503FC012B2EE62D008AFE24 /* LPViewController.swift */,
 			);
 			path = "Loyalty Program";
+			sourceTree = "<group>";
+		};
+		D503FC032B2F02A2008AFE24 /* Get Benefits */ = {
+			isa = PBXGroup;
+			children = (
+				D503FC042B2F0885008AFE24 /* MFGetBenefitsVC.swift */,
+				D503FC062B2F0AA9008AFE24 /* MFOriginalPriceBenefitsView.swift */,
+			);
+			path = "Get Benefits";
 			sourceTree = "<group>";
 		};
 		D5815CB52B2D42B300A01B7A = {
@@ -283,6 +296,7 @@
 		D5815CFE2B2D51A000A01B7A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				D503FC032B2F02A2008AFE24 /* Get Benefits */,
 				D503FC002B2EE1A3008AFE24 /* Loyalty Program */,
 				D503FBF52B2E9052008AFE24 /* Dashboard */,
 				D5D93D252B2DBB560066F77D /* Message Center */,
@@ -475,6 +489,7 @@
 				D5815CEA2B2D453200A01B7A /* VehicleViewController.swift in Sources */,
 				D5815D0A2B2D591900A01B7A /* ManageStorageViewController.swift in Sources */,
 				D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */,
+				D503FC072B2F0AA9008AFE24 /* MFOriginalPriceBenefitsView.swift in Sources */,
 				D5815CE22B2D449600A01B7A /* BaseNavigationController.swift in Sources */,
 				D5D93D202B2D96820066F77D /* MFStorageCell.swift in Sources */,
 				D5815CE62B2D44F100A01B7A /* MJLanguageManager.swift in Sources */,
@@ -483,6 +498,7 @@
 				D5815CF02B2D45FC00A01B7A /* MFExtension.swift in Sources */,
 				D503FBFB2B2E9709008AFE24 /* MFConvenientEntryView.swift in Sources */,
 				D5815CE32B2D449600A01B7A /* BaseTabBarViewController.swift in Sources */,
+				D503FC052B2F0885008AFE24 /* MFGetBenefitsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

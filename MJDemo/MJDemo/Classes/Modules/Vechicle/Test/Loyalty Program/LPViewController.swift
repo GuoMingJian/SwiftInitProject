@@ -100,23 +100,28 @@ class LPViewController: BaseViewController {
             //
             let currentPoint: CGPoint = dragView.center
             var newPosition = currentPoint
-            // 计算中心点与屏幕最近的边
-            //            let top: CGFloat = currentPoint.y - minY
-            //            let left: CGFloat = currentPoint.x - minX
-            //            let bottom: CGFloat = maxY - currentPoint.y
-            //            let right: CGFloat = maxX - currentPoint.x
-            //            let mostSmall = [top, left, bottom, right].sorted().first
-            //                if mostSmall == top {
-            //                    newPosition.y = minY
-            //                } else if mostSmall == left {
-            //                    newPosition.x = minX
-            //                } else if mostSmall == bottom {
-            //                    newPosition.y = maxY
-            //                } else {
-            //                    newPosition.x = maxX
-            //                }
-            // 默认只向右吸附！
-            newPosition.x = maxX
+            //
+            let isMoveToRight: Bool = true
+            if !isMoveToRight {
+                // 计算中心点与屏幕最近的边
+                let top: CGFloat = currentPoint.y - minY
+                let left: CGFloat = currentPoint.x - minX
+                let bottom: CGFloat = maxY - currentPoint.y
+                let right: CGFloat = maxX - currentPoint.x
+                let mostSmall = [top, left, bottom, right].sorted().first
+                if mostSmall == top {
+                    newPosition.y = minY
+                } else if mostSmall == left {
+                    newPosition.x = minX
+                } else if mostSmall == bottom {
+                    newPosition.y = maxY
+                } else {
+                    newPosition.x = maxX
+                }
+            } else {
+                // 默认只向右吸附！
+                newPosition.x = maxX
+            }
             // 靠边悬停
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
                 dragView.center = newPosition

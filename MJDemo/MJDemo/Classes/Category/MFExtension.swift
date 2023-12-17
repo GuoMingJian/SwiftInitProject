@@ -901,6 +901,19 @@ extension String {
         return appBuild
     }
     
+    /// 截取NSRange范围的子字符串
+    func subString(with range: NSRange) -> String {
+        let text = self as NSString
+        let subStr = text.substring(with: range) as String
+        return subStr
+    }
+    
+    /// 获取子字符串的范围NSRange
+    func range(of subString: String) -> NSRange {
+        let text = self as NSString
+        return text.range(of: subString)
+    }
+    
     // MARK: - 沙盒目录
     /// Document 目录
     static func getDocumentPath() -> String {

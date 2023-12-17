@@ -14,10 +14,10 @@ class VehicleViewController: BaseViewController {
         return view
     }()
     
-    private lazy var messageButton: UIButton = {
-        let button = UIButton(type: .custom)
+    private lazy var messageButton: MJUnderLineButton = {
+        let button = MJUnderLineButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.orange, for: .normal)
         button.setTitle("Message Center", for: .normal)
         button.addTarget(self, action: #selector(messageButtonAction), for: .touchUpInside)
         return button
@@ -147,6 +147,9 @@ class VehicleViewController: BaseViewController {
                 // LP
                 let lpVC = LPViewController()
                 self.navigationController?.pushViewController(lpVC, animated: true)
+            } else if index == 4 {
+                let vc = MFGetBenefitsVC()
+                self.navigationController?.pushViewController(vc, animated: true)
             } else {
                 MJTipView.show("index: \(index)")
             }

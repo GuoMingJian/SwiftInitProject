@@ -58,15 +58,16 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
     //MARK:-
     public func setupUI() {
         // 状态栏背景色
-        UINavigationBar.appearance().barTintColor = kNavigationColor
-        UINavigationBar.appearance().backgroundColor = kNavigationColor
-        self.navigationBar.barTintColor = kNavigationColor
-        self.navigationBar.backgroundColor = kNavigationColor
+        let color: UIColor = .red //kNavigationColor
+        UINavigationBar.appearance().barTintColor = color
+        UINavigationBar.appearance().backgroundColor = color
+        self.navigationBar.barTintColor = color
+        self.navigationBar.backgroundColor = color
         // 字体颜色大小
         let titleColor = UIColor.black
         self.navigationBar.titleTextAttributes = [.foregroundColor: titleColor, .font: UIFont.PFMedium(fontSize: 16)]
         // 添加阴影
-        addShadow()
+//        addShadow()
     }
     
     private func addShadow() {
@@ -85,6 +86,11 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
                 bottomLineView.heightAnchor.constraint(equalToConstant: 1)
             ])
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
     }
     
     override func viewDidLoad() {
