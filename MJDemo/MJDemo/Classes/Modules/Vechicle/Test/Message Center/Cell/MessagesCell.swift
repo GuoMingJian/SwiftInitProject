@@ -73,9 +73,9 @@ class MessagesCell: BaseTableViewCell {
     // MARK: -
     private let leading: CGFloat = 16
     private let topOffset: CGFloat = 6
-    private let bottomOffset: CGFloat = 15
+    private let bottomOffset: CGFloat = 12
     private let bgImageHeight: CGFloat = 130
-    private let textViewHeight: CGFloat = 65
+    private let textViewHeight: CGFloat = 70
     
     override func setupViews() {
         super.setupViews()
@@ -110,10 +110,10 @@ class MessagesCell: BaseTableViewCell {
             bottomContainerView.trailingAnchor.constraint(equalTo: subContainerView.trailingAnchor),
             bottomContainerView.bottomAnchor.constraint(equalTo: subContainerView.bottomAnchor),
             
-            textView.topAnchor.constraint(equalTo: bottomContainerView.topAnchor, constant: 10),
+            textView.topAnchor.constraint(equalTo: bottomContainerView.topAnchor, constant: 2),
             textView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 10),
             textView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -10),
-            textView.heightAnchor.constraint(equalToConstant: textViewHeight),
+            textView.heightAnchor.constraint(lessThanOrEqualToConstant: textViewHeight),
             
             timeLabel.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 2),
             timeLabel.leadingAnchor.constraint(equalTo: textView.leadingAnchor),

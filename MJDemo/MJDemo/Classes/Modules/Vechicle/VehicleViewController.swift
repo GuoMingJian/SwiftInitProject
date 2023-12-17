@@ -23,6 +23,24 @@ class VehicleViewController: BaseViewController {
         return button
     }()
     
+    private lazy var convenientEntryView: MFConvenientEntryView = {
+        let view = MFConvenientEntryView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var latestKeylogsView: MFLatestKeylogsView = {
+        let view = MFLatestKeylogsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var appsView: AppsView = {
+        let view = AppsView().initFromNib() as! AppsView
+//        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     // MARK: -
     override func configNavigationBar() {
         super.configNavigationBar()
@@ -33,6 +51,10 @@ class VehicleViewController: BaseViewController {
         //
         view.addSubview(storageView)
         view.addSubview(messageButton)
+        view.addSubview(convenientEntryView)
+        view.addSubview(latestKeylogsView)
+        view.addSubview(appsView)
+        appsView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             storageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -41,9 +63,28 @@ class VehicleViewController: BaseViewController {
         ])
         
         NSLayoutConstraint.activate([
-            messageButton.topAnchor.constraint(equalTo: storageView.bottomAnchor, constant: 30),
+            messageButton.topAnchor.constraint(equalTo: storageView.bottomAnchor, constant: 10),
             messageButton.heightAnchor.constraint(equalToConstant: 40),
             messageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            convenientEntryView.topAnchor.constraint(equalTo: messageButton.bottomAnchor, constant: 10),
+            convenientEntryView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            convenientEntryView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            latestKeylogsView.topAnchor.constraint(equalTo: convenientEntryView.bottomAnchor, constant: 10),
+            latestKeylogsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            latestKeylogsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+        ])
+        
+        NSLayoutConstraint.activate([
+            appsView.topAnchor.constraint(equalTo: latestKeylogsView.bottomAnchor, constant: 10),
+            appsView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            appsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
     }
     
@@ -56,6 +97,12 @@ class VehicleViewController: BaseViewController {
     // MARK: -
     private func setupData() {
         setupStorageViewData()
+        setupConvenientEntryViewData()
+        setupLatestKeylogsViewData()
+        
+        appsView.clickAppBlock = { index in
+            MJTipView.show("index: \(index)")
+        }
     }
     
     private func setupStorageViewData() {
@@ -66,6 +113,35 @@ class VehicleViewController: BaseViewController {
             let vc = ManageStorageViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    private func setupConvenientEntryViewData() {
+        convenientEntryView.setupViews { index in
+            MJTipView.show("index: \(index)")
+        }
+    }
+    
+    private func setupLatestKeylogsViewData() {
+        var config = MFLatestKeylogsView.Configuration()
+        var dataList: [MFLatestKeylogsView.ViewData] = []
+        
+        var data = MFLatestKeylogsView.ViewData()
+        data.title = "tips for first date"
+        data.time = "2023-11-21 17:27:32"
+        dataList.append(data)
+        
+        data = MFLatestKeylogsView.ViewData()
+        data.title = "Alisa's party at 6pm tonight1233eeeeerrtyy4567888i7o"
+        data.time = "2023-11-21 17:27:32"
+        dataList.append(data)
+        
+        data = MFLatestKeylogsView.ViewData()
+        data.title = "vruv@qq.com"
+        data.time = "2023-11-21 17:27:32"
+        dataList.append(data)
+        
+        config.dataList = dataList
+        latestKeylogsView.setupViews(configuration: config)
     }
     
     @objc private func messageButtonAction() {

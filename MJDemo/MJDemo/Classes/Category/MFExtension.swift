@@ -168,6 +168,18 @@ extension UIFont {
 
 // MARK: - UIView
 extension UIView {
+    /// Xib初始化
+    func initFromNib() -> UIView {
+        let str : String = NSStringFromClass(self.classForCoder)
+        if let classStr: String = (str as NSString).components(separatedBy: ".").last {
+            return UINib.init(nibName: classStr, bundle: nil).instantiate(withOwner: nil, options: nil).first as! UIView
+        } else {
+            return self
+        }
+    }
+}
+
+extension UIView {
     enum ViewSide {
         case left, right, top, bottom
     }
@@ -475,7 +487,7 @@ extension UIView {
     
     /// 设置渐变色
     public func setGradientColor(startColor: UIColor,
-                              endColor: UIColor) {
+                                 endColor: UIColor) {
         self.layoutIfNeeded()
         self.setNeedsLayout()
         let gradientImage = UIImage.gradientImageWithBounds(bounds: self.bounds, colors: [startColor.cgColor, endColor.cgColor])
@@ -678,6 +690,103 @@ extension UIView {
         if dotView != nil {
             dotView!.removeFromSuperview()
         }
+    }
+}
+
+// MARK: - Date
+extension Date {
+    static func getDateFormatter(timeZone: TimeZone,
+                                 dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = timeZone
+        dateFormatter.dateFormat = dateFormat
+        
+        return dateFormatter
+    }
+    
+    /// Date->String
+    static func dateToString(date: Date,
+                             dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+    
+    /// String -> Date
+    static func stringToDate(dateString: String,
+                             dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        if let date = dateFormatter.date(from: dateString) {
+            return date
+        }
+        return Date()
+    }
+    
+    /// 时间戳 转 字符串
+    static func timestampToString(timestamp: Int,
+                                  dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let newTimestamp = updateTimestamp(timestamp)
+        let date = Date(timeIntervalSince1970: TimeInterval(newTimestamp))
+        let dateString = dateToString(date: date, dateFormat: dateFormat)
+        return dateString
+    }
+    
+    /// 时间戳 转 字符串
+    static func timestampToString(timestampStr: String,
+                                  dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
+        var newTimestamp = timestampStr
+        if newTimestamp.count > 10 {
+            newTimestamp = (newTimestamp as NSString).substring(to: 10)
+        }
+        let timeInt: Int = Int(newTimestamp) ?? 0
+        let date = Date(timeIntervalSince1970: TimeInterval(timeInt))
+        let dateString = dateToString(date: date, dateFormat: dateFormat)
+        return dateString
+    }
+    
+    static func updateTimestamp(_ timestamp: Int) -> Int {
+        var temp = "\(timestamp)"
+        if temp.count > 10 {
+            // 13位 转 10位
+            temp = (temp as NSString).substring(to: 10)
+        }
+        let newTimestamp: Int = Int(temp) ?? 0
+        return newTimestamp
+    }
+    
+    /// 时间戳 转 date
+    static func timestampToDate(timestamp: Int) -> Date {
+        let newTimestamp = updateTimestamp(timestamp)
+        let date = Date(timeIntervalSince1970: TimeInterval(newTimestamp))
+        return date
+    }
+    
+    /// 获取当前 秒级 时间戳 - 10位
+    var timeStamp: String {
+        let time = self.timeIntervalSince1970
+        let timeString = String(format: "%0.f", time)
+        return timeString
+    }
+    
+    /// 获取当前 毫秒级 时间戳 - 13位
+    var msTimeStamp: String {
+        let time = self.timeIntervalSince1970 * 1000
+        let timeString = String(format: "%0.f", time)
+        return timeString
+    }
+    
+    func isGreater(than date: Date) -> Bool {
+        return self > date
+    }
+    
+    func isSmaller(than date: Date) -> Bool {
+        return self < date
+    }
+    
+    func isEqual(to date: Date) -> Bool {
+        return self == date
     }
 }
 
@@ -974,7 +1083,7 @@ extension String {
     
     /// 文本的宽度
     public func textWidth(font: UIFont,
-                   height: CGFloat) -> CGFloat {
+                          height: CGFloat) -> CGFloat {
         
         let width = self.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height),
                                       options: NSStringDrawingOptions(rawValue: NSStringDrawingOptions.usesFontLeading.rawValue | NSStringDrawingOptions.usesLineFragmentOrigin.rawValue | NSStringDrawingOptions.truncatesLastVisibleLine.rawValue)
@@ -1119,14 +1228,17 @@ extension UITextView {
         // 创建图片附件
         let imgAttachment = NSTextAttachment(data: nil, ofType: nil)
         imgAttachment.image = image
-        imgAttachment.bounds = CGRect(x: 0, y: -6, width: self.font!.lineHeight,
-                                      height: self.font!.lineHeight)
+        //        imgAttachment.bounds = CGRect(x: 0, y: -6, width: self.font!.lineHeight,
+        //                                      height: self.font!.lineHeight)
+        let yOffset: CGFloat = -10
+        imgAttachment.bounds = CGRect(x: 0, y: yOffset, width: image.size.width,
+                                      height: image.size.height)
         
         let imgAttachmentString: NSAttributedString = NSAttributedString(attachment: imgAttachment)
         
         // 获得目前光标的位置
         let selectedRange = self.selectedRange
-        // 插入文字
+        // 插入图片
         mutableStr.insert(imgAttachmentString, at: selectedRange.location)
         
         let font: UIFont = self.font ?? UIFont.systemFont(ofSize: 16)

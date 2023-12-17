@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7A025AC5D93C144BACB97EE9 /* Pods_MJDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403FBA4A1F08B34B8FFB357C /* Pods_MJDemo.framework */; };
+		D503FBF72B2E9082008AFE24 /* MFLatestKeylogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBF62B2E9082008AFE24 /* MFLatestKeylogsView.swift */; };
+		D503FBFB2B2E9709008AFE24 /* MFConvenientEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBFA2B2E9709008AFE24 /* MFConvenientEntryView.swift */; };
+		D503FBFD2B2EC8E2008AFE24 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */; };
+		D503FBFF2B2EC8F4008AFE24 /* AppsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */; };
 		D5815CC22B2D42B300A01B7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC12B2D42B300A01B7A /* AppDelegate.swift */; };
 		D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */; };
 		D5815CCB2B2D42B400A01B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5815CCA2B2D42B400A01B7A /* Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		403FBA4A1F08B34B8FFB357C /* Pods_MJDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C7B0A0BF8710F4782195C0 /* Pods-MJDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJDemo.release.xcconfig"; path = "Target Support Files/Pods-MJDemo/Pods-MJDemo.release.xcconfig"; sourceTree = "<group>"; };
 		702F129399F2E52FAA02B303 /* Pods-MJDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJDemo.debug.xcconfig"; path = "Target Support Files/Pods-MJDemo/Pods-MJDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D503FBF62B2E9082008AFE24 /* MFLatestKeylogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFLatestKeylogsView.swift; sourceTree = "<group>"; };
+		D503FBFA2B2E9709008AFE24 /* MFConvenientEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFConvenientEntryView.swift; sourceTree = "<group>"; };
+		D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
+		D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsView.xib; sourceTree = "<group>"; };
 		D5815CBE2B2D42B300A01B7A /* MJDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5815CC12B2D42B300A01B7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,17 @@
 				44C7B0A0BF8710F4782195C0 /* Pods-MJDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D503FBF52B2E9052008AFE24 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D503FBFA2B2E9709008AFE24 /* MFConvenientEntryView.swift */,
+				D503FBF62B2E9082008AFE24 /* MFLatestKeylogsView.swift */,
+				D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */,
+				D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		D5815CB52B2D42B300A01B7A = {
@@ -254,6 +273,7 @@
 		D5815CFE2B2D51A000A01B7A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				D503FBF52B2E9052008AFE24 /* Dashboard */,
 				D5D93D252B2DBB560066F77D /* Message Center */,
 				D5815CFF2B2D51B200A01B7A /* Manage Storage */,
 			);
@@ -363,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D503FBFF2B2EC8F4008AFE24 /* AppsView.xib in Resources */,
 				D5815CCE2B2D42B400A01B7A /* LaunchScreen.storyboard in Resources */,
 				D5815CDD2B2D43FA00A01B7A /* localizable.strings in Resources */,
 				D5815CCB2B2D42B400A01B7A /* Assets.xcassets in Resources */,
@@ -437,6 +458,8 @@
 				D5D93D272B2DBBDA0066F77D /* MessageCenterViewController.swift in Sources */,
 				D5D93D322B2DD2E10066F77D /* GuidelinesCell.swift in Sources */,
 				D5815CC22B2D42B300A01B7A /* AppDelegate.swift in Sources */,
+				D503FBF72B2E9082008AFE24 /* MFLatestKeylogsView.swift in Sources */,
+				D503FBFD2B2EC8E2008AFE24 /* AppsView.swift in Sources */,
 				D5815CEA2B2D453200A01B7A /* VehicleViewController.swift in Sources */,
 				D5815D0A2B2D591900A01B7A /* ManageStorageViewController.swift in Sources */,
 				D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */,
@@ -446,6 +469,7 @@
 				D5815D0E2B2D79EA00A01B7A /* MJButton.swift in Sources */,
 				D5815CEC2B2D454F00A01B7A /* BaseViewController.swift in Sources */,
 				D5815CF02B2D45FC00A01B7A /* MFExtension.swift in Sources */,
+				D503FBFB2B2E9709008AFE24 /* MFConvenientEntryView.swift in Sources */,
 				D5815CE32B2D449600A01B7A /* BaseTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
