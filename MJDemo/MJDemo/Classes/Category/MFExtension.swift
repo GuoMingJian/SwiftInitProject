@@ -599,7 +599,7 @@ extension UIView {
 extension UIView {
     /// 未读消息（小红点）
     func showRedDot(dotColor: UIColor = .red,
-                    dotWidth: CGFloat = 10,
+                    dotWidth: CGFloat = 9,
                     xOffset: CGFloat = 1,
                     yOffset: CGFloat = 1) {
         hiddenRedDot()
@@ -983,6 +983,14 @@ extension String {
     }
 }
 
+extension Int {
+    /// 转字符串
+    public func toString() -> String {
+        let str = String(format: "%d", self)
+        return str
+    }
+}
+
 // MARK: - Encodable
 extension Encodable {
     var dictionary: [String: Any]? {
@@ -1103,5 +1111,59 @@ extension UIImage {
     }
 }
 
-
-
+extension UITextView {
+    /// 插入图片
+    public func insertPicture(_ image: UIImage) {
+        let mutableStr = NSMutableAttributedString(attributedString: self.attributedText)
+        
+        // 创建图片附件
+        let imgAttachment = NSTextAttachment(data: nil, ofType: nil)
+        imgAttachment.image = image
+        imgAttachment.bounds = CGRect(x: 0, y: -6, width: self.font!.lineHeight,
+                                      height: self.font!.lineHeight)
+        
+        let imgAttachmentString: NSAttributedString = NSAttributedString(attachment: imgAttachment)
+        
+        // 获得目前光标的位置
+        let selectedRange = self.selectedRange
+        // 插入文字
+        mutableStr.insert(imgAttachmentString, at: selectedRange.location)
+        
+        let font: UIFont = self.font ?? UIFont.systemFont(ofSize: 16)
+        // 设置可变文本的字体属性
+        mutableStr.addAttribute(NSAttributedString.Key.font, value: font,
+                                range: NSMakeRange(0, mutableStr.length))
+        // 再次记住新的光标的位置
+        let newSelectedRange = NSMakeRange(selectedRange.location+1, 0)
+        
+        // 重新给文本赋值
+        self.attributedText = mutableStr
+        // 恢复光标的位置（上面一句代码执行之后，光标会移到最后面）
+        self.selectedRange = newSelectedRange
+        // 移动滚动条（确保光标在可视区域内）
+        self.scrollRangeToVisible(newSelectedRange)
+    }
+    
+    /// 插入文字
+    public func insertString(_ text: String) {
+        let mutableStr = NSMutableAttributedString(attributedString: self.attributedText)
+        // 获得目前光标的位置
+        let selectedRange = self.selectedRange
+        // 插入文字
+        let attStr = NSAttributedString(string: text)
+        mutableStr.insert(attStr, at: selectedRange.location)
+        
+        let font: UIFont = self.font ?? UIFont.systemFont(ofSize: 16)
+        
+        // 设置可变文本的字体属性
+        mutableStr.addAttribute(NSAttributedString.Key.font, value: font,
+                                range: NSMakeRange(0, mutableStr.length))
+        // 再次记住新的光标的位置
+        let newSelectedRange = NSMakeRange(selectedRange.location + attStr.length, 0)
+        
+        // 重新给文本赋值
+        self.attributedText = mutableStr
+        // 恢复光标的位置（上面一句代码执行之后，光标会移到最后面）
+        self.selectedRange = newSelectedRange
+    }
+}

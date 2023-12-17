@@ -1,5 +1,5 @@
 //
-//  MFBaseView.swift
+//  BaseView.swift
 //  KGPro
 //
 //  Created by 郭明健 on 2023/12/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MFBaseView: UIView {
+class BaseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         

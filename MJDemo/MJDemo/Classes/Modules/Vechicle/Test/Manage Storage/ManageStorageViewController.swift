@@ -55,11 +55,11 @@ class ManageStorageViewController: BaseViewController {
     
     // MARK: -
     private var dataSource: [StorageData] = []
+    private var firstCell: MFStorageCell?
     private var lastCell: MFStorageCell?
     
     override func setupViews() {
         super.setupViews()
-        view.backgroundColor = UIColor.hexColor(color: "F4F7FA")
         
         view.addSubview(pieChartView)
         view.addSubview(storageBuyNowView)
@@ -94,6 +94,9 @@ class ManageStorageViewController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        if firstCell != nil {
+            firstCell!.setCornerRadius(conrners: [.topLeft, .topRight], radius: 10)
+        }
         if lastCell != nil {
             lastCell!.setCornerRadius(conrners: [.bottomLeft, .bottomRight], radius: 10)
         }
@@ -199,6 +202,9 @@ extension ManageStorageViewController: UITableViewDelegate, UITableViewDataSourc
         let usedStr = String(format: "%.2f", data.used) + data.unit
         cell.updateInfo(color: data.color, name: data.name, value: usedStr)
         
+        if indexPath.row == 0 {
+            self.firstCell = cell
+        }
         if indexPath.row == dataSource.count - 1 {
             self.lastCell = cell
         }

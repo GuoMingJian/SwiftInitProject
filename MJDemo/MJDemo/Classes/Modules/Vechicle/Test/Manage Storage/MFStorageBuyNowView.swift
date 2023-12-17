@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MFStorageBuyNowView: MFBaseView {
+class MFStorageBuyNowView: BaseView {
     struct Configuration {
         var basicStorage: String = "5.00G"
         var extraStorage: String = "5.00G"

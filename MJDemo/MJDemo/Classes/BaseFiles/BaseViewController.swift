@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
     
     /// 适配深色、浅色模式
     func adaptDynamicColor() {
-        self.view.backgroundColor = kBackgroundColor
+        self.view.backgroundColor = UIColor.hexColor(color: "F4F7FA")
         setNavigationBarBackgroundColor(view: self.navigationController?.navigationBar)
     }
     

@@ -92,7 +92,15 @@ class BaseTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    public lazy var redDotView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        view.setCornerRadius(radius: 5)
+        return view
+    }()
     
+    // MARK: - 
     public func setupViews() {
         showRightArrowImageView(false)
         

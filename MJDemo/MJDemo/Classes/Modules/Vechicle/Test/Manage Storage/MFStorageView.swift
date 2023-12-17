@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MFStorageView: MFBaseView {
+class MFStorageView: BaseView {
     struct Configuration {
         var used: Double = 8.00
         var total: Double = 10.00

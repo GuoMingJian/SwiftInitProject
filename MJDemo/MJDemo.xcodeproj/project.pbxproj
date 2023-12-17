@@ -26,7 +26,7 @@
 		D5815CFD2B2D4CB000A01B7A /* NSDictionary+NSLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D5815CFC2B2D4CB000A01B7A /* NSDictionary+NSLog.m */; };
 		D5815D012B2D51B200A01B7A /* MFStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D002B2D51B200A01B7A /* MFStorageView.swift */; };
 		D5815D052B2D51BA00A01B7A /* MJPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D032B2D51BA00A01B7A /* MJPieChartView.swift */; };
-		D5815D082B2D51D900A01B7A /* MFBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D072B2D51D900A01B7A /* MFBaseView.swift */; };
+		D5815D082B2D51D900A01B7A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D072B2D51D900A01B7A /* BaseView.swift */; };
 		D5815D0A2B2D591900A01B7A /* ManageStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D092B2D591900A01B7A /* ManageStorageViewController.swift */; };
 		D5815D0C2B2D729E00A01B7A /* MFStorageBuyNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D0B2B2D729E00A01B7A /* MFStorageBuyNowView.swift */; };
 		D5815D0E2B2D79EA00A01B7A /* MJButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815D0D2B2D79EA00A01B7A /* MJButton.swift */; };
@@ -34,6 +34,12 @@
 		D5D93D202B2D96820066F77D /* MFStorageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */; };
 		D5D93D222B2D96A70066F77D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */; };
 		D5D93D242B2DA0C00066F77D /* MFStorageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */; };
+		D5D93D272B2DBBDA0066F77D /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D262B2DBBDA0066F77D /* MessageCenterViewController.swift */; };
+		D5D93D292B2DBE110066F77D /* MJSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D282B2DBE110066F77D /* MJSegmentView.swift */; };
+		D5D93D2B2B2DCDE40066F77D /* MessagesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D2A2B2DCDE40066F77D /* MessagesTableView.swift */; };
+		D5D93D2D2B2DCE080066F77D /* GuidelinesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D2C2B2DCE080066F77D /* GuidelinesTableView.swift */; };
+		D5D93D302B2DD24E0066F77D /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D2F2B2DD24E0066F77D /* MessagesCell.swift */; };
+		D5D93D322B2DD2E10066F77D /* GuidelinesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D93D312B2DD2E10066F77D /* GuidelinesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +69,7 @@
 		D5815CFC2B2D4CB000A01B7A /* NSDictionary+NSLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NSLog.m"; sourceTree = "<group>"; };
 		D5815D002B2D51B200A01B7A /* MFStorageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFStorageView.swift; sourceTree = "<group>"; };
 		D5815D032B2D51BA00A01B7A /* MJPieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJPieChartView.swift; sourceTree = "<group>"; };
-		D5815D072B2D51D900A01B7A /* MFBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFBaseView.swift; sourceTree = "<group>"; };
+		D5815D072B2D51D900A01B7A /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D5815D092B2D591900A01B7A /* ManageStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageStorageViewController.swift; sourceTree = "<group>"; };
 		D5815D0B2B2D729E00A01B7A /* MFStorageBuyNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageBuyNowView.swift; sourceTree = "<group>"; };
 		D5815D0D2B2D79EA00A01B7A /* MJButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJButton.swift; sourceTree = "<group>"; };
@@ -71,6 +77,12 @@
 		D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageCell.swift; sourceTree = "<group>"; };
 		D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFStorageFooterView.swift; sourceTree = "<group>"; };
+		D5D93D262B2DBBDA0066F77D /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
+		D5D93D282B2DBE110066F77D /* MJSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJSegmentView.swift; sourceTree = "<group>"; };
+		D5D93D2A2B2DCDE40066F77D /* MessagesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableView.swift; sourceTree = "<group>"; };
+		D5D93D2C2B2DCE080066F77D /* GuidelinesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelinesTableView.swift; sourceTree = "<group>"; };
+		D5D93D2F2B2DD24E0066F77D /* MessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
+		D5D93D312B2DD2E10066F77D /* GuidelinesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelinesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +174,7 @@
 				D5815CEB2B2D454F00A01B7A /* BaseViewController.swift */,
 				D5815CE02B2D449600A01B7A /* BaseNavigationController.swift */,
 				D5815CE12B2D449600A01B7A /* BaseTabBarViewController.swift */,
-				D5815D072B2D51D900A01B7A /* MFBaseView.swift */,
+				D5815D072B2D51D900A01B7A /* BaseView.swift */,
 				D5D93D212B2D96A70066F77D /* BaseTableViewCell.swift */,
 			);
 			path = BaseFiles;
@@ -242,6 +254,7 @@
 		D5815CFE2B2D51A000A01B7A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				D5D93D252B2DBB560066F77D /* Message Center */,
 				D5815CFF2B2D51B200A01B7A /* Manage Storage */,
 			);
 			path = Test;
@@ -264,6 +277,27 @@
 			children = (
 				D5D93D1F2B2D96820066F77D /* MFStorageCell.swift */,
 				D5D93D232B2DA0C00066F77D /* MFStorageFooterView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D5D93D252B2DBB560066F77D /* Message Center */ = {
+			isa = PBXGroup;
+			children = (
+				D5D93D282B2DBE110066F77D /* MJSegmentView.swift */,
+				D5D93D2A2B2DCDE40066F77D /* MessagesTableView.swift */,
+				D5D93D2C2B2DCE080066F77D /* GuidelinesTableView.swift */,
+				D5D93D2E2B2DD2360066F77D /* Cell */,
+				D5D93D262B2DBBDA0066F77D /* MessageCenterViewController.swift */,
+			);
+			path = "Message Center";
+			sourceTree = "<group>";
+		};
+		D5D93D2E2B2DD2360066F77D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D5D93D2F2B2DD24E0066F77D /* MessagesCell.swift */,
+				D5D93D312B2DD2E10066F77D /* GuidelinesCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -386,16 +420,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5815CFD2B2D4CB000A01B7A /* NSDictionary+NSLog.m in Sources */,
+				D5D93D302B2DD24E0066F77D /* MessagesCell.swift in Sources */,
 				D5815CF52B2D470C00A01B7A /* NotificationViewController.swift in Sources */,
 				D5815D102B2D833900A01B7A /* MJTipView.swift in Sources */,
+				D5D93D292B2DBE110066F77D /* MJSegmentView.swift in Sources */,
 				D5815D012B2D51B200A01B7A /* MFStorageView.swift in Sources */,
 				D5D93D222B2D96A70066F77D /* BaseTableViewCell.swift in Sources */,
 				D5815D052B2D51BA00A01B7A /* MJPieChartView.swift in Sources */,
 				D5D93D242B2DA0C00066F77D /* MFStorageFooterView.swift in Sources */,
-				D5815D082B2D51D900A01B7A /* MFBaseView.swift in Sources */,
+				D5815D082B2D51D900A01B7A /* BaseView.swift in Sources */,
+				D5D93D2B2B2DCDE40066F77D /* MessagesTableView.swift in Sources */,
 				D5815CF72B2D472500A01B7A /* MineViewController.swift in Sources */,
 				D5815CEE2B2D456A00A01B7A /* MJTools.swift in Sources */,
+				D5D93D2D2B2DCE080066F77D /* GuidelinesTableView.swift in Sources */,
 				D5815D0C2B2D729E00A01B7A /* MFStorageBuyNowView.swift in Sources */,
+				D5D93D272B2DBBDA0066F77D /* MessageCenterViewController.swift in Sources */,
+				D5D93D322B2DD2E10066F77D /* GuidelinesCell.swift in Sources */,
 				D5815CC22B2D42B300A01B7A /* AppDelegate.swift in Sources */,
 				D5815CEA2B2D453200A01B7A /* VehicleViewController.swift in Sources */,
 				D5815D0A2B2D591900A01B7A /* ManageStorageViewController.swift in Sources */,
