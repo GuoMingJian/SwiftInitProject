@@ -39,6 +39,8 @@ class AppsView: UIView {
     @IBOutlet weak var screenshotsLabel: UILabel!
     @IBOutlet weak var screenshotsCountLabel: UILabel!
     
+    // MARK: -
+    
     private var clickAppBlock: ((_ index: Int) -> Void)?
     
     override func awakeFromNib() {

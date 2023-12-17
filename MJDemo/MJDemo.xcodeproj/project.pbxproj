@@ -12,6 +12,7 @@
 		D503FBFB2B2E9709008AFE24 /* MFConvenientEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBFA2B2E9709008AFE24 /* MFConvenientEntryView.swift */; };
 		D503FBFD2B2EC8E2008AFE24 /* AppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */; };
 		D503FBFF2B2EC8F4008AFE24 /* AppsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */; };
+		D503FC022B2EE62D008AFE24 /* LPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D503FC012B2EE62D008AFE24 /* LPViewController.swift */; };
 		D5815CC22B2D42B300A01B7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC12B2D42B300A01B7A /* AppDelegate.swift */; };
 		D5815CC42B2D42B300A01B7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */; };
 		D5815CCB2B2D42B400A01B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5815CCA2B2D42B400A01B7A /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		D503FBFA2B2E9709008AFE24 /* MFConvenientEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFConvenientEntryView.swift; sourceTree = "<group>"; };
 		D503FBFC2B2EC8E2008AFE24 /* AppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsView.swift; sourceTree = "<group>"; };
 		D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsView.xib; sourceTree = "<group>"; };
+		D503FC012B2EE62D008AFE24 /* LPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPViewController.swift; sourceTree = "<group>"; };
 		D5815CBE2B2D42B300A01B7A /* MJDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5815CC12B2D42B300A01B7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5815CC32B2D42B300A01B7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 				D503FBFE2B2EC8F4008AFE24 /* AppsView.xib */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		D503FC002B2EE1A3008AFE24 /* Loyalty Program */ = {
+			isa = PBXGroup;
+			children = (
+				D503FC012B2EE62D008AFE24 /* LPViewController.swift */,
+			);
+			path = "Loyalty Program";
 			sourceTree = "<group>";
 		};
 		D5815CB52B2D42B300A01B7A = {
@@ -273,6 +283,7 @@
 		D5815CFE2B2D51A000A01B7A /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				D503FC002B2EE1A3008AFE24 /* Loyalty Program */,
 				D503FBF52B2E9052008AFE24 /* Dashboard */,
 				D5D93D252B2DBB560066F77D /* Message Center */,
 				D5815CFF2B2D51B200A01B7A /* Manage Storage */,
@@ -452,6 +463,7 @@
 				D5815D082B2D51D900A01B7A /* BaseView.swift in Sources */,
 				D5D93D2B2B2DCDE40066F77D /* MessagesTableView.swift in Sources */,
 				D5815CF72B2D472500A01B7A /* MineViewController.swift in Sources */,
+				D503FC022B2EE62D008AFE24 /* LPViewController.swift in Sources */,
 				D5815CEE2B2D456A00A01B7A /* MJTools.swift in Sources */,
 				D5D93D2D2B2DCE080066F77D /* GuidelinesTableView.swift in Sources */,
 				D5815D0C2B2D729E00A01B7A /* MFStorageBuyNowView.swift in Sources */,
@@ -549,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -606,7 +618,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -624,6 +636,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YV2XMCDUJ9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MJDemo/Supporting File/Info.plist";
@@ -653,6 +666,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YV2XMCDUJ9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MJDemo/Supporting File/Info.plist";

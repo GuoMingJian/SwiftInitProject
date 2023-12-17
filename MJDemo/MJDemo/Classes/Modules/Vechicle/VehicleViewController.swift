@@ -141,8 +141,15 @@ class VehicleViewController: BaseViewController {
     }
     
     private func seutpAppsData() {
-        appsView.setupViews { index in
-            MJTipView.show("index: \(index)")
+        appsView.setupViews { [weak self] index in
+            guard let self = self else { return }
+            if index == 5 {
+                // LP
+                let lpVC = LPViewController()
+                self.navigationController?.pushViewController(lpVC, animated: true)
+            } else {
+                MJTipView.show("index: \(index)")
+            }
         }
     }
     
