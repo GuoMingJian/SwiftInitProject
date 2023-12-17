@@ -8,7 +8,7 @@
 import UIKit
 
 class MFStorageFooterView: UITableViewHeaderFooterView {
-
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -24,6 +24,8 @@ class MFStorageFooterView: UITableViewHeaderFooterView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = UIFont.PFRegular(fontSize: 13)
         textView.backgroundColor = .clear
+        textView.isEditable = false
+        textView.isScrollEnabled = false
         return textView
     }()
     
@@ -41,15 +43,15 @@ class MFStorageFooterView: UITableViewHeaderFooterView {
             textView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
         //
-        let height = textView.text.textHeight(font: textView.font!, width: kScreenWidth - 20 - 16) + 15
-        let textHeight: CGFloat = ceil(height)
-        
-        if textViewHeightConstraint != nil {
-            textViewHeightConstraint.isActive = false
-        }
-        textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: textHeight)
-        textViewHeightConstraint.isActive = true
-        textViewHeightConstraint.priority = UILayoutPriority(rawValue: 1000)
+        //        let height = textView.text.textHeight(font: textView.font!, width: kScreenWidth - 20 - 16) + 30
+        //        let textHeight: CGFloat = ceil(height)
+        //        
+        //        if textViewHeightConstraint != nil {
+        //            textViewHeightConstraint.isActive = false
+        //        }
+        //        textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: textHeight)
+        //        textViewHeightConstraint.isActive = true
+        //        textViewHeightConstraint.priority = UILayoutPriority(rawValue: 1000)
     }
     
     public func updateInfo(text: String) {
