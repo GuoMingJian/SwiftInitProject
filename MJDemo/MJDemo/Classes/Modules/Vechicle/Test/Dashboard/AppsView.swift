@@ -39,16 +39,24 @@ class AppsView: UIView {
     @IBOutlet weak var screenshotsLabel: UILabel!
     @IBOutlet weak var screenshotsCountLabel: UILabel!
     
-    public var clickAppBlock: ((_ index: Int) -> Void)?
+    private var clickAppBlock: ((_ index: Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    private func setupData() {
         whatsAppView.setCornerRadius(radius: 10)
         callLogsView.setCornerRadius(radius: 10)
         messageView.setCornerRadius(radius: 10)
         photosView.setCornerRadius(radius: 10)
         recCallsView.setCornerRadius(radius: 10)
         screenshotsView.setCornerRadius(radius: 10)
+    }
+    
+    public func setupViews(clickAppBlock: @escaping ((_ index: Int) -> Void)) {
+        setupData()
+        self.clickAppBlock = clickAppBlock
     }
     
     // MARK: - actions

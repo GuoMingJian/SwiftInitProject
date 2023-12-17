@@ -37,7 +37,6 @@ class VehicleViewController: BaseViewController {
     
     private lazy var appsView: AppsView = {
         let view = AppsView().initFromNib() as! AppsView
-//        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -99,10 +98,7 @@ class VehicleViewController: BaseViewController {
         setupStorageViewData()
         setupConvenientEntryViewData()
         setupLatestKeylogsViewData()
-        
-        appsView.clickAppBlock = { index in
-            MJTipView.show("index: \(index)")
-        }
+        seutpAppsData() 
     }
     
     private func setupStorageViewData() {
@@ -142,6 +138,12 @@ class VehicleViewController: BaseViewController {
         
         config.dataList = dataList
         latestKeylogsView.setupViews(configuration: config)
+    }
+    
+    private func seutpAppsData() {
+        appsView.setupViews { index in
+            MJTipView.show("index: \(index)")
+        }
     }
     
     @objc private func messageButtonAction() {
