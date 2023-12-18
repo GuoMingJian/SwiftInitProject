@@ -17,11 +17,11 @@ class MFConvenientEntryView: BaseView {
         return view
     }()
     
-    private lazy var liveScreenImageView: UIImageView = {
-        let imageView: UIImageView = UIImageView(frame: CGRectZero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+//    private lazy var liveScreenImageView: UIImageView = {
+//        let imageView: UIImageView = UIImageView(frame: CGRectZero)
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
     
     private lazy var recSurroundImageView: UIImageView = {
         let imageView: UIImageView = UIImageView(frame: CGRectZero)
@@ -44,10 +44,10 @@ class MFConvenientEntryView: BaseView {
         return label
     }
     
-    private lazy var liveScreenLabel: UILabel = {
-        let label = getLabel()
-        return label
-    }()
+//    private lazy var liveScreenLabel: UILabel = {
+//        let label = getLabel()
+//        return label
+//    }()
     
     private lazy var recSurroundLabel: UILabel = {
         let label = getLabel()
@@ -59,13 +59,13 @@ class MFConvenientEntryView: BaseView {
         return label
     }()
     
-    private lazy var liveScreenButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.tag = 0
-        button.addTarget(self, action: #selector(itemAction(button:)), for: .touchUpInside)
-        return button
-    }()
+//    private lazy var liveScreenButton: UIButton = {
+//        let button = UIButton(type: .custom)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.tag = 0
+//        button.addTarget(self, action: #selector(itemAction(button:)), for: .touchUpInside)
+//        return button
+//    }()
     
     private lazy var recSurroundButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -95,9 +95,9 @@ class MFConvenientEntryView: BaseView {
         
         addSubview(containerView)
         
-        containerView.addSubview(liveScreenImageView)
-        containerView.addSubview(liveScreenLabel)
-        containerView.addSubview(liveScreenButton)
+//        containerView.addSubview(liveScreenImageView)
+//        containerView.addSubview(liveScreenLabel)
+//        containerView.addSubview(liveScreenButton)
         
         containerView.addSubview(recSurroundImageView)
         containerView.addSubview(recSurroundLabel)
@@ -119,7 +119,8 @@ class MFConvenientEntryView: BaseView {
         ])
         
         NSLayoutConstraint.activate([
-            recSurroundLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+//            recSurroundLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            recSurroundLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: leading),
             recSurroundLabel.heightAnchor.constraint(equalToConstant: textHeight),
             recSurroundLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -topOffset),
             
@@ -136,7 +137,8 @@ class MFConvenientEntryView: BaseView {
         ])
         
         NSLayoutConstraint.activate([
-            takePhotosLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -leading),
+//            takePhotosLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -leading),
+            takePhotosLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             takePhotosLabel.heightAnchor.constraint(equalToConstant: textHeight),
             takePhotosLabel.topAnchor.constraint(equalTo: recSurroundLabel.topAnchor),
             
@@ -151,21 +153,21 @@ class MFConvenientEntryView: BaseView {
             takePhotosButton.topAnchor.constraint(equalTo: takePhotosImageView.topAnchor),
         ])
         
-        NSLayoutConstraint.activate([
-            liveScreenLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: leading),
-            liveScreenLabel.heightAnchor.constraint(equalToConstant: textHeight),
-            liveScreenLabel.topAnchor.constraint(equalTo: recSurroundLabel.topAnchor),
-            
-            liveScreenImageView.topAnchor.constraint(equalTo: recSurroundImageView.topAnchor),
-            liveScreenImageView.centerXAnchor.constraint(equalTo: liveScreenLabel.centerXAnchor),
-            liveScreenImageView.widthAnchor.constraint(equalToConstant: iconHeight),
-            liveScreenImageView.heightAnchor.constraint(equalToConstant: iconHeight),
-            
-            liveScreenButton.bottomAnchor.constraint(equalTo: liveScreenLabel.bottomAnchor),
-            liveScreenButton.leadingAnchor.constraint(equalTo: liveScreenLabel.leadingAnchor),
-            liveScreenButton.trailingAnchor.constraint(equalTo: liveScreenLabel.trailingAnchor),
-            liveScreenButton.topAnchor.constraint(equalTo: liveScreenImageView.topAnchor),
-        ])
+//        NSLayoutConstraint.activate([
+//            liveScreenLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: leading),
+//            liveScreenLabel.heightAnchor.constraint(equalToConstant: textHeight),
+//            liveScreenLabel.topAnchor.constraint(equalTo: recSurroundLabel.topAnchor),
+//            
+//            liveScreenImageView.topAnchor.constraint(equalTo: recSurroundImageView.topAnchor),
+//            liveScreenImageView.centerXAnchor.constraint(equalTo: liveScreenLabel.centerXAnchor),
+//            liveScreenImageView.widthAnchor.constraint(equalToConstant: iconHeight),
+//            liveScreenImageView.heightAnchor.constraint(equalToConstant: iconHeight),
+//            
+//            liveScreenButton.bottomAnchor.constraint(equalTo: liveScreenLabel.bottomAnchor),
+//            liveScreenButton.leadingAnchor.constraint(equalTo: liveScreenLabel.leadingAnchor),
+//            liveScreenButton.trailingAnchor.constraint(equalTo: liveScreenLabel.trailingAnchor),
+//            liveScreenButton.topAnchor.constraint(equalTo: liveScreenImageView.topAnchor),
+//        ])
     }
     
     // MARK: -
@@ -177,34 +179,34 @@ class MFConvenientEntryView: BaseView {
     }
     
     private func setupData() {
-        liveScreenLabel.text = "Live Screen"
+//        liveScreenLabel.text = "Live Screen"
         recSurroundLabel.text = "Rec Surround"
         takePhotosLabel.text = "Take Photos"
         
-        liveScreenImageView.image = kErrorImage
+//        liveScreenImageView.image = kErrorImage
         recSurroundImageView.image = kErrorImage
         takePhotosImageView.image = kErrorImage
         
-        addLine()
+//        addLine()
     }
     
-    private func addLine() {
-        let font1 = UIFont.PFMedium(fontSize: 15)
-        let font2 = UIFont.PFRegular(fontSize: 14)
-        let deletePrice = "$85.99"
-        let previousPrice = "$59.99/\(deletePrice)"
-        
-        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: previousPrice, attributes: [NSAttributedString.Key.font: font1])
-        
-        let rang = previousPrice.range(of: deletePrice)
-        
-        attributeString.addAttributes([NSAttributedString.Key.baselineOffset : 0,
-                                       NSAttributedString.Key.strikethroughStyle : 1.5,
-                                       NSAttributedString.Key.foregroundColor : UIColor.lightGray,
-                                       NSAttributedString.Key.font : font2], range: rang)
-        //
-        liveScreenLabel.attributedText = attributeString
-    }
+//    private func addLine() {
+//        let font1 = UIFont.PFMedium(fontSize: 15)
+//        let font2 = UIFont.PFRegular(fontSize: 14)
+//        let deletePrice = "$85.99"
+//        let previousPrice = "$59.99/\(deletePrice)"
+//        
+//        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: previousPrice, attributes: [NSAttributedString.Key.font: font1])
+//        
+//        let rang = previousPrice.range(of: deletePrice)
+//        
+//        attributeString.addAttributes([NSAttributedString.Key.baselineOffset : 0,
+//                                       NSAttributedString.Key.strikethroughStyle : 1.5,
+//                                       NSAttributedString.Key.foregroundColor : UIColor.lightGray,
+//                                       NSAttributedString.Key.font : font2], range: rang)
+//        //
+//        liveScreenLabel.attributedText = attributeString
+//    }
     
     // MARK: - actions
     @objc private func itemAction(button: UIButton) {
